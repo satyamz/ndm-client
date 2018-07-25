@@ -1,0 +1,16 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: ndm-client
+  namespace: default
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: ndm-client
+    spec:
+      containers:
+      - name: ndm-client
+        imagePullPolicy: Always
+        image: satyamz/ndm-client:0.1
