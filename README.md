@@ -1,27 +1,27 @@
-Simple node disk manager client
+## Simple node disk manager client
 
-Build binary
+#### Build binary
 
 ```
 go build -o ndm-client
 ```
 
 
-Build Docker image
+#### Build Docker image
 
 ```
 sudo docker build -t username/ndm-client:0.1 .
 ```
 
 
-Deploy NDM client in kubernetes
+#### Deploy NDM client in kubernetes
 
 ```
 kubectl apply -f ndm-operator.yaml 
 kubectl apply -f ndm-client.yaml 
 ```
 
-Result
+#### Result
 ```
 
 kubectl logs -f ndm-client-76c4f864d7-4lvsw
