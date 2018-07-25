@@ -11,15 +11,18 @@ import (
 func main() {
 	fmt.Println("Starting NDM Client")
 	config, err := rest.InClusterConfig()
-	fmt.Println(config, "  ", err)
+	if err != nil {
+		fmt.Println("Unable to create config ", err)
+		return
+	}
 	clientset, err := ndmClient.NewForConfig(config)
 	if err != nil {
-		fmt.Println("Unable to create client")
+		fmt.Println("Unable to create clientset ", err)
 		return
 	}
 	diskList, err := clientset.OpenebsV1alpha1().Disks().List(v1.ListOptions{})
 	if err != nil {
-		fmt.Println("Unable to fetch disk details")
+		fmt.Println("Unable to fetch disk details ", err)
 		return
 	}
 	for _, v := range diskList.Items {

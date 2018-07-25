@@ -10,6 +10,7 @@ spec:
       labels:
         name: ndm-client
     spec:
+      serviceAccountName: openebs-ndm-operator
       containers:
       - name: ndm-client
         imagePullPolicy: Always
