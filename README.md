@@ -17,8 +17,8 @@ sudo docker build -t username/ndm-client:0.1 .
 #### Deploy NDM client in kubernetes
 
 ```
-kubectl apply -f ndm-operator.yaml 
-kubectl apply -f ndm-client.yaml 
+kubectl apply -f examples/ndm-operator.yaml 
+kubectl apply -f examples/ndm-client.yaml 
 ```
 
 #### Result
